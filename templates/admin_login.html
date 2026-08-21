@@ -1,30 +1,38 @@
 {% extends "base.html" %}
 
+{% block title %}Executive Portal | Meridian & Company{% endblock %}
+
 {% block content %}
 <div class="container py-5 my-5">
     <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card shadow border-0 p-4">
-                <h3 class="text-center fw-bold mb-4">Admin Login</h3>
+        <div class="col-md-5 col-lg-4" data-aos="fade-up">
+            <div class="glass-card p-4 p-md-5 position-relative overflow-hidden" style="background: rgba(18, 25, 38, 0.85); border: 1px solid rgba(255, 255, 255, 0.1);">
+                <div class="text-center mb-4">
+                    <div class="d-inline-flex justify-content-center align-items-center rounded-circle border border-warning p-3 mb-3" style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1);">
+                        <i class="bi bi-shield-lock text-accent fs-2"></i>
+                    </div>
+                    <h3 class="fw-bold text-white mb-1">Executive Portal</h3>
+                    <p class="text-muted small mb-0">Secure Administrator Access</p>
+                </div>
                 
                 {% with messages = get_flashed_messages(with_categories=true) %}
                     {% if messages %}
                         {% for category, msg in messages %}
-                            <div class="alert alert-{{ category }} py-2 text-center">{{ msg }}</div>
+                            <div class="alert alert-{{ category }} py-2 text-center small mb-3 border-0">{{ msg }}</div>
                         {% endfor %}
                     {% endif %}
                 {% endwith %}
 
                 <form method="POST" action="{{ url_for('admin_login') }}">
                     <div class="mb-3">
-                        <label class="form-label fw-semibold">Username</label>
-                        <input type="text" name="username" class="form-control" placeholder="Enter username" required autofocus>
+                        <label class="form-label small text-muted font-monospace">USERNAME</label>
+                        <input type="text" name="username" class="form-control form-control-glass" placeholder="Enter username" required autofocus>
                     </div>
                     <div class="mb-4">
-                        <label class="form-label fw-semibold">Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Enter password" required>
+                        <label class="form-label small text-muted font-monospace">PASSWORD</label>
+                        <input type="password" name="password" class="form-control form-control-glass" placeholder="••••••••" required>
                     </div>
-                    <button type="submit" class="btn btn-dark w-100 py-2">Sign In</button>
+                    <button type="submit" class="btn btn-gold w-100 py-2">Authenticate</button>
                 </form>
             </div>
         </div>

@@ -2,49 +2,52 @@
 
 {% block content %}
 <div class="container py-5">
-    <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+    <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom border-secondary border-opacity-25" data-aos="fade-down">
         <div>
-            <h2 class="fw-bold mb-0">Client Inquiries</h2>
-            <p class="text-muted small mb-0">Live database submissions</p>
+            <h2 class="fw-bold text-white mb-0">Client Inquiries</h2>
+            <p class="text-muted small mb-0">Active enterprise leads stored in database</p>
         </div>
-        <div>
-            <span class="badge bg-secondary me-2">{{ inquiries|length }} Total</span>
-            <a href="{{ url_for('admin_logout') }}" class="btn btn-outline-danger btn-sm">Logout</a>
+        <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-surface border border-secondary border-opacity-25 text-accent px-3 py-2">{{ inquiries|length }} Inquiries</span>
+            <a href="{{ url_for('admin_logout') }}" class="btn btn-glass btn-sm text-danger border-danger">Logout</a>
         </div>
     </div>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, msg in messages %}
-                <div class="alert alert-{{ category }} py-2">{{ msg }}</div>
+                <div class="alert alert-{{ category }} py-2 small">{{ msg }}</div>
             {% endfor %}
         {% endif %}
     {% endwith %}
 
-    <div class="card shadow-sm border-0">
+    <div class="glass-card overflow-hidden" data-aos="fade-up">
         <div class="table-responsive">
-            <table class="table table-hover align-middle mb-0">
-                <thead class="table-dark">
-                    <tr>
+            <table class="table table-dark table-hover align-middle mb-0" style="background: transparent;">
+                <thead>
+                    <tr class="border-bottom border-secondary border-opacity-25 text-muted small">
                         <th scope="col" style="width: 80px;">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Message</th>
-                        <th scope="col" style="width: 180px;">Received At</th>
+                        <th scope="col" style="width: 180px;">Date Received</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for item in inquiries %}
-                    <tr>
-                        <td class="fw-bold text-muted">{{ item.id }}</td>
-                        <td class="fw-semibold">{{ item.name }}</td>
-                        <td><a href="mailto:{{ item.email }}" class="text-decoration-none">{{ item.email }}</a></td>
-                        <td class="text-break">{{ item.message }}</td>
-                        <td class="small text-muted">{{ item.created_at.strftime('%Y-%m-%d %H:%M') if item.created_at else 'N/A' }}</td>
+                    <tr class="border-bottom border-secondary border-opacity-10">
+                        <td class="font-monospace text-accent">{{ item.id }}</td>
+                        <td class="fw-semibold text-white">{{ item.name }}</td>
+                        <td><a href="mailto:{{ item.email }}" class="text-info text-decoration-none">{{ item.email }}</a></td>
+                        <td class="text-light text-opacity-75 text-break">{{ item.message }}</td>
+                        <td class="small text-muted">{{ item.created_at.strftime('%b %d, %Y %H:%M') if item.created_at else 'N/A' }}</td>
                     </tr>
                     {% else %}
                     <tr>
-                        <td colspan="5" class="text-center py-4 text-muted">No inquiries recorded yet.</td>
+                        <td colspan="5" class="text-center py-5 text-muted">
+                            <i class="bi bi-inbox fs-2 d-block mb-2 text-secondary"></i>
+                            No inquiries recorded in the database yet.
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
