@@ -1,156 +1,162 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
 <!-- Hero Section -->
-<section id="hero" class="hero-section text-white py-5">
+<section class="py-5 position-relative" style="padding-top: 6rem !important; padding-bottom: 5rem !important;">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-8" data-aos="fade-up">
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-4 rounded-pill border border-secondary border-opacity-25 bg-surface small text-accent font-monospace">
+                    <i class="bi bi-compass"></i> STRATEGY • TRANSFORMATION • AI
+                </div>
+                <h1 class="display-3 fw-bold text-white mb-4" style="line-height: 1.15;">
+                    Meridian <span class="text-accent">&</span> Company
+                </h1>
+                <p class="lead text-light text-opacity-85 mb-5" style="max-width: 680px; font-size: 1.25rem; line-height: 1.6;">
+                    We are a strategy, transformation, and AI advisory firm that combines strategic insight, transformation expertise, and AI with a long-term perspective to help discover, nurture, and realise potential while creating enduring value.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#contact" class="btn btn-gold px-4 py-3">Connect With Us</a>
+                    <a href="{{ url_for('practice_areas') }}" class="btn btn-glass px-4 py-3">Practice Areas</a>
+                </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-left" data-aos-delay="200">
+                <div class="glass-card p-4 p-md-5 text-center">
+                    <i class="bi bi-brightness-high text-accent display-4 mb-3 d-inline-block"></i>
+                    <h4 class="fw-bold text-white mb-2">The Meridian Meridian</h4>
+                    <p class="text-muted small mb-0">Illuminating the strategic path to discovering, nurturing, and realising enduring potential.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Guiding Philosophy Section -->
+<section id="philosophy" class="py-5 position-relative" style="background: rgba(255, 255, 255, 0.015);">
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+                <div class="glass-card p-4 p-md-5 border-accent" style="border-color: rgba(212, 175, 55, 0.25);">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill border border-secondary border-opacity-25 small text-accent font-monospace">
+                        GUIDING PHILOSOPHY
+                    </div>
+                    <h2 class="display-6 fw-bold text-white mb-4">The Meridian Divine Light</h2>
+                    <p class="text-light text-opacity-90 lead" style="font-size: 1.15rem; line-height: 1.8;">
+                        We believe every individual, organisation, and civilisation possesses a <strong>Divine Light</strong>—the unique potential to grow, create, contribute, and flourish. The Meridian Divine Light is our guiding philosophy. Like a meridian that provides direction and orientation, it illuminates the path to discovering, nurturing, and realising that potential.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vision & Mission / The Three Pillars -->
+<section id="pillars" class="py-5">
+    <div class="container py-4">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="text-accent small text-uppercase font-monospace">Vision & Mission</span>
+            <h2 class="display-5 fw-bold text-white mt-2">The Three Meridian Pillars</h2>
+            <p class="text-muted col-lg-8 mx-auto mt-3">
+                Our vision is a world where every individual, organisation, and civilisation discovers, nurtures, and realises its potential, creating a more purposeful, flourishing, and enduring future. We pursue this vision through the three Meridian Pillars:
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Pillar 1: Human -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="glass-card p-4 p-lg-5 h-100 d-flex flex-column">
+                    <div class="text-accent fs-1 mb-3"><i class="bi bi-person-bounding-box"></i></div>
+                    <h3 class="fw-bold text-white mb-3">Human</h3>
+                    <p class="text-muted small mb-0 mt-auto">Helping individuals discover, nurture, and realise their potential.</p>
+                </div>
+            </div>
+
+            <!-- Pillar 2: Organisation -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="glass-card p-4 p-lg-5 h-100 d-flex flex-column">
+                    <div class="text-accent fs-1 mb-3"><i class="bi bi-buildings"></i></div>
+                    <h3 class="fw-bold text-white mb-3">Organisation</h3>
+                    <p class="text-muted small mb-0 mt-auto">Helping organisations discover, nurture, and realise their potential.</p>
+                </div>
+            </div>
+
+            <!-- Pillar 3: Civilisation -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="glass-card p-4 p-lg-5 h-100 d-flex flex-column">
+                    <div class="text-accent fs-1 mb-3"><i class="bi bi-globe-americas"></i></div>
+                    <h3 class="fw-bold text-white mb-3">Civilisation</h3>
+                    <p class="text-muted small mb-0 mt-auto">Helping civilisation discover, nurture, and realise its potential.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Founder & Managing Partner Section -->
+<section id="founder" class="py-5 position-relative" style="background: rgba(255, 255, 255, 0.015);">
+    <div class="container py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="glass-card p-4 p-md-5 text-center">
+                    
+                    <div class="mb-4">
+                        <img src="{{ url_for('static', filename='images/founder.png') }}" 
+                             alt="Utkarsh Kishore" 
+                             class="rounded-circle border border-2 shadow" 
+                             style="width: 140px; height: 140px; object-fit: cover; border-color: var(--accent-gold) !important;">
+                    </div>
+
+                    <h3 class="fw-bold text-white mb-1">Utkarsh Kishore</h3>
+                    <p class="text-accent small font-monospace mb-2">Founder & Managing Partner</p>
+                    <p class="text-muted small mb-4">Strategy • Transformation • AI<br>Entrepreneur | Author</p>
+                    
+                    <div class="d-flex flex-column gap-2">
+                        <a href="https://www.linkedin.com/in/utkarsh-kishore-79123447/" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-sm w-100">
+                            <i class="bi bi-linkedin me-2 text-info"></i>View LinkedIn Profile
+                        </a>
+                        <a href="https://www.amazon.com/stores/Utkarsh-Kishore/author/B0H3GHW3FC?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=01cf7cd9-d50f-4cd9-8f94-6fe923480173" class="btn btn-gold btn-sm w-100">
+                            <i class="bi bi-book me-2"></i>Explore The Divine Light Series
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-7" data-aos="fade-left">
+                <span class="text-accent small text-uppercase font-monospace">Leadership Profile</span>
+                <h2 class="display-6 fw-bold text-white mt-1 mb-4">Leading With Purpose & Perspective</h2>
+                <div class="text-light text-opacity-80 d-flex flex-column gap-3" style="line-height: 1.8;">
+                    <p>
+                        Utkarsh Kishore is a strategy, growth, and business transformation professional with over 15 years of experience helping multinational corporations and growth-stage businesses navigate change across Asia-Pacific and emerging markets. Alongside his corporate career, he has also built and scaled an entrepreneurial agri-asset venture.
+                    </p>
+                    <p>
+                        He founded Meridian & Company with a simple belief: meaningful transformation extends beyond business outcomes. Sustainable success is achieved when individuals, organisations, and civilisation discover, nurture, and realise their potential. Guided by <em>The Meridian Divine Light</em>, the firm’s philosophy, Meridian combines strategy, transformation, and AI with a long-term perspective to help clients create enduring value.
+                    </p>
+                    <p>
+                        Beyond his advisory and entrepreneurial work, Utkarsh is the author of <em>The Divine Light Series</em>, a collection of books exploring leadership, human potential, organisations, AI, and the long-term evolution of civilisation. His writing is guided by the same philosophy that underpins Meridian & Company.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section id="contact" class="py-5">
     <div class="container py-5">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <span class="badge bg-accent text-dark fw-bold px-3 py-2 mb-3 text-uppercase">Strategy • Transformation • AI</span>
-                <h1 class="display-4 fw-bold mb-4">Guiding Potential. <br><span class="text-accent">Creating Enduring Value.</span></h1>
-                <p class="lead text-light text-opacity-75 mb-4">
-                    We are a strategy, transformation, and AI advisory firm that combines strategy, transformation expertise, and AI with a long-term perspective to help discover, nurture, and realise potential while creating enduring value.
-                </p>
-                <div class="d-flex gap-3">
-                    <a href="#practice-areas" class="btn btn-accent px-4 py-2">Explore Practice Areas</a>
-                    <a href="#philosophy" class="btn btn-outline-light px-4 py-2">Our Philosophy</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Guiding Philosophy -->
-<section id="philosophy" class="py-5 bg-white border-bottom">
-    <div class="container py-4 text-center">
         <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <h6 class="text-accent text-uppercase fw-bold mb-2">Guiding Philosophy</h6>
-                <h2 class="fw-bold mb-3">The Meridian Divine Light</h2>
-                <p class="text-muted lead mb-4">
-                    We believe every individual, organisation, and civilisation possesses a Divine Light—the unique potential to grow, create, contribute, and flourish. The Meridian Divine Light is our guiding philosophy. Like a meridian that provides direction and orientation, it illuminates the path to discovering, nurturing, and realising that potential.
-                </p>
-                <div class="p-4 rounded-3 bg-light border text-start">
-                    <h5 class="fw-bold mb-2">Vision & Mission</h5>
-                    <p class="text-muted mb-0">Our vision is a world where every individual, organisation, and civilisation discovers, nurtures, and realises its potential, creating a more purposeful, flourishing, and enduring future.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- The Three Pillars -->
-<section id="pillars" class="py-5 bg-light">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <h6 class="text-accent text-uppercase fw-bold mb-2">Framework</h6>
-            <h2 class="fw-bold">The Three Meridian Pillars</h2>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm pillar-card p-4 bg-white">
-                    <div class="text-accent fs-1 mb-2"><i class="bi bi-person"></i></div>
-                    <h4 class="fw-bold">Human</h4>
-                    <p class="text-muted mb-0">Helping individuals discover, nurture, and realise their potential.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm pillar-card p-4 bg-white">
-                    <div class="text-accent fs-1 mb-2"><i class="bi bi-buildings"></i></div>
-                    <h4 class="fw-bold">Organisation</h4>
-                    <p class="text-muted mb-0">Helping Organisations discover, nurture, and realise their potential.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm pillar-card p-4 bg-white">
-                    <div class="text-accent fs-1 mb-2"><i class="bi bi-globe"></i></div>
-                    <h4 class="fw-bold">Civilisation</h4>
-                    <p class="text-muted mb-0">Helping civilisation discover, nurture, and realise its potential.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Practice Areas -->
-<section id="practice-areas" class="py-5 bg-white border-bottom">
-    <div class="container py-4">
-        <div class="text-center mb-5">
-            <h6 class="text-accent text-uppercase fw-bold mb-2">Capabilities</h6>
-            <h2 class="fw-bold">Practice Areas</h2>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="p-4 rounded-3 border bg-light h-100">
-                    <i class="bi bi-compass text-accent fs-2 mb-2 d-block"></i>
-                    <h5 class="fw-bold">Strategy</h5>
-                    <p class="text-muted small mb-0">Long-term vision setting, market positioning, and corporate strategic direction.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-4 rounded-3 border bg-light h-100">
-                    <i class="bi bi-arrow-repeat text-accent fs-2 mb-2 d-block"></i>
-                    <h5 class="fw-bold">Transformation</h5>
-                    <p class="text-muted small mb-0">Operating model evolution and navigating structural business change across markets.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-4 rounded-3 border bg-light h-100">
-                    <i class="bi bi-cpu text-accent fs-2 mb-2 d-block"></i>
-                    <h5 class="fw-bold">Artificial Intelligence</h5>
-                    <p class="text-muted small mb-0">Practical AI integration and strategy aligned with sustainable long-term value.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Founder Section -->
-<section id="founder" class="py-5 bg-dark text-white">
-    <div class="container py-4">
-        <div class="row align-items-center gy-4">
-            <div class="col-lg-4 text-center">
-                <div class="mb-3">
-                    <img src="{{ url_for('static', filename='images/founder.png') }}" 
-                         alt="Utkarsh Kishore" 
-                         class="rounded-circle border border-warning shadow-sm mx-auto d-block" 
-                         style="width: 140px; height: 140px; object-fit: cover;">
-                </div>
-                <h4 class="fw-bold mb-1">Utkarsh Kishore</h4>
-                <p class="text-accent small mb-3">Founder & Managing Partner</p>
-                <div class="d-flex justify-content-center gap-2">
-                    <a href="https://www.linkedin.com/in/utkarsh-kishore-79123447" target="_blank" class="btn btn-outline-light btn-sm">LinkedIn Profile</a>
-                    <a href="https://www.amazon.com/stores/Utkarsh-Kishore/author/B0H3GHW3FC?ref=ap_rdr&shoppingPortalEnabled=true&ccs_id=01cf7cd9-d50f-4cd9-8f94-6fe923480173" target="_blank" class="btn btn-accent btn-sm">The Divine Light Series</a>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <span class="badge bg-secondary mb-2">Entrepreneur | Author</span>
-                <h3 class="fw-bold mb-3">About the Founder</h3>
-                <p class="text-light text-opacity-75">
-                    Utkarsh Kishore is a strategy, growth, and business transformation professional with over 15 years of experience helping multinational corporations and growth-stage businesses navigate change across Asia-Pacific and emerging markets. Alongside his corporate career, he has also built and scaled an entrepreneurial agri-asset venture.
-                </p>
-                <p class="text-light text-opacity-75">
-                    Beyond his advisory and entrepreneurial work, Utkarsh is the author of <em>The Divine Light Series</em>, a collection of books exploring leadership, human potential, organisations, AI, and the long-term evolution of civilisation.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Form -->
-<section id="contact" class="py-5 bg-light">
-    <div class="container py-4">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="card border-0 shadow-sm p-4 rounded-4">
-                    <h3 class="fw-bold text-center mb-1">Connect with Meridian</h3>
-                    <p class="text-muted text-center small mb-4">Inquire about advisory services and strategic collaboration.</p>
+            <div class="col-lg-8" data-aos="fade-up">
+                <div class="glass-card p-4 p-md-5">
+                    <div class="text-center mb-4">
+                        <span class="text-accent small font-monospace">GET IN TOUCH</span>
+                        <h2 class="fw-bold text-white mt-1">Initiate a Conversation</h2>
+                        <p class="text-muted small">Reach out to discuss strategic advisory, transformation initiatives, or AI enablement.</p>
+                    </div>
 
                     {% with messages = get_flashed_messages(with_categories=true) %}
                         {% if messages %}
-                            {% for category, message in messages %}
+                            {% for category, msg in messages %}
                                 <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                                    {{ message }}
+                                    {{ msg }}
                                     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                                 </div>
                             {% endfor %}
@@ -158,19 +164,23 @@
                     {% endwith %}
 
                     <form method="POST" action="{{ url_for('index') }}">
-                        <div class="mb-3">
-                            <label class="form-label small fw-semibold">Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small text-muted">Your Name</label>
+                                <input type="text" name="name" class="form-control form-control-glass" placeholder="e.g. John Doe" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-muted">Email Address</label>
+                                <input type="email" name="email" class="form-control form-control-glass" placeholder="name@company.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small text-muted">Message / Inquiry</label>
+                                <textarea name="message" rows="4" class="form-control form-control-glass" placeholder="How can Meridian assist your organisation?" required></textarea>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-gold w-100 py-3">Send Inquiry</button>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label small fw-semibold">Email</label>
-                            <input type="email" name="email" class="form-control" placeholder="name@company.com" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label small fw-semibold">Message</label>
-                            <textarea name="message" rows="4" class="form-control" placeholder="Describe your advisory requirements..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-accent w-100 py-2">Submit Inquiry</button>
                     </form>
                 </div>
             </div>
